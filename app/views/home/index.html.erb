@@ -6,7 +6,11 @@
         please stay tuned as my app developers.
         It will be full of awesomesauce!
         </p>
-        
+        <% if signed_in? %>
+         <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:'btn btn-primary'  %>
+         <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-info' %>
+         <% else %>
          <%=link_to 'Log in', new_user_session_path, class:'btn btn-primary' %>
          <%= link_to 'Join',new_user_registration_path, class:'btn btn-success' %>
+         <% end %>
 </div>
