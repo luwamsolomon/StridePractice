@@ -1,21 +1,38 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <%= link_to 'Rubypractice', root_path, class:'navbar-brand' %> 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" 
-  data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <%= link_to 'Rubypractice', root_path, class:'navbar-brand' %>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+       <li> <%= link_to 'Home', root_path, class:'btn btn-info' %>  </li>
+       <li><%= link_to 'About Us', home_about_path, class:'btn btn-info' %> </li>
+       <li> <%= link_to 'List Pins', pins_path, class:'btn btn-info'%></li>
+       <% if signed_in? %>
+               <li> <%= link_to 'Add Pins', new_pin_path, class:'btn btn-info' %></li>
+               <li>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:'btn btn-info' %></li> 
+               <li> <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-info' %></li>
  
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <%= link_to 'Home', root_path %>   
-                  <%= link_to 'About Us', home_about_path%> 
-      <% if signed_in? %>
-                  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                  <%= link_to 'Edit Profile', edit_user_registration_path %>
      <% else %>
-               <%=link_to 'Log in', new_user_session_path %>
-              <%= link_to 'Join', new_user_registration_path %>
+            
+             <li> <%=link_to 'Log in', new_user_session_path, class:'btn btn-info' %></li>
+            <li> <%= link_to 'Join', new_user_registration_path, class:'btn btn-info' %></li>
+        
     <% end %>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
    </div>
    </div>
 </nav>
