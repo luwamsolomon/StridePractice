@@ -14,6 +14,7 @@ group :development, :test do
 end
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
 gem 'devise', '~> 4.3'
+gem 'paperclip', '~> 5.1'
 group :development do
   
   gem 'web-console', '~> 2.0'
