@@ -1,25 +1,15 @@
-<p id="notice"><%= notice %></p>
-<div class="panel panel-primary">
-  <div class="panel-heading"><h1>Listing Pins</h1></div>
-  <div class="panel-body">
+
     
-      <h2>Description</h2>
+      
 <% @pins.each do |pin| %>
-        <%= image_tag pin.image.url(:medium) %><br/>
-        <%= pin.description %><br/><br/>
-        <%= link_to 'Show', pin, class:'btn btn-primary' %>
-    
+       <%= link_to image_tag(pin.image.url(:medium)), pin %><br/>
+        <%= pin.description %><br/>
+        <%= pin.user.name if pin.user %> <br/>
+        
     <% if pin.user == current_user %>
-        <%= link_to 'Edit', edit_pin_path(pin), class:'btn btn-primary' %>
-        <%= link_to 'Destroy', pin, method: :delete, class:'btn btn-primary', data: { confirm: 'Are you sure?' } %><br/>
+        <%= link_to 'Edit', edit_pin_path(pin) %>
+        <%= link_to 'Destroy', pin, method: :delete, data: { confirm: 'Are you sure?' } %><br/>
 
-    </div>
-
-          <br>
-          <div class="panel-footer">
-          <%= link_to 'New Pin', new_pin_path, class:'btn btn-primary' %>
-          </div>
     <% end %>
-     
-<% end %>
-</div>
+      
+ <%end %>
