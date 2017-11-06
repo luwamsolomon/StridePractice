@@ -10,22 +10,32 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <%= link_to 'Rubypractice', root_path, class:'navbar-brand' %>
-    </div>
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-       <li> <%= link_to 'Home', root_path, class:'btn btn-info' %>  </li>
-       <li><%= link_to 'About Us', home_about_path, class:'btn btn-info' %> </li>
-       <li> <%= link_to 'List Pins', pins_path, class:'btn btn-info'%></li>
+    <strong> <%= link_to 'Pinterested', root_path, class:'navbar-brand' %> </strong> 
+  </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
+      <ul class="nav navbar-nav navbar-right">
+       <li> <form action="" class="navbar-form navbar-right" size= 20px >
+   <div class="input-group">
+       <input type="Search" placeholder="Search..." class="form-control" />
+       <div class="input-group-btn">
+           <button class="btn btn-default">
+           <span class="glyphicon glyphicon-search"></span>
+           </button>
+       </div>
+   </div>
+</form></li>
+       <li> <%= link_to 'Home', root_path %>  </li>
+       <li><%= link_to 'About Us', home_about_path %> </li>
+       <li> <%= link_to 'List Pins', pins_path %></li>
        <% if signed_in? %>
-               <li> <%= link_to 'Add Pins', new_pin_path, class:'btn btn-info' %></li>
-               <li>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:'btn btn-info' %></li> 
-               <li> <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-info' %></li>
+               <li> <%= link_to 'Add Pins', new_pin_path %></li>
+               <li>  <%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li> 
+               <li> <%= link_to 'Edit Profile', edit_user_registration_path %></li>
  
      <% else %>
             
-             <li> <%=link_to 'Log in', new_user_session_path, class:'btn btn-info' %></li>
-            <li> <%= link_to 'Join', new_user_registration_path, class:'btn btn-info' %></li>
+             <li> <%=link_to 'Log in', new_user_session_path %></li>
+            <li> <%= link_to 'Join', new_user_registration_path %></li>
         
     <% end %>
       </ul>

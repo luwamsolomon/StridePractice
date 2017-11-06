@@ -17,6 +17,8 @@ gem 'devise', '~> 4.3'
 gem 'paperclip', '~> 5.1'
 gem 'masonry-rails', '~> 0.2.4'
 gem 'jquery-turbolinks', '~> 2.1'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 group :development do
   
   gem 'web-console', '~> 2.0'
