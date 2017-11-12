@@ -1,6 +1,6 @@
 
   <%= render'/home/jambo' unless user_signed_in? %>
-  
+  <div class="center">
    <div id="pins" class="transitions-enabled">
      <% @pins.each do |pin| %>
       <div class="box">
@@ -22,7 +22,7 @@
     </div>
     <%end %>
  </div> <br/> 
- <div class="center">
+ 
  <%= will_paginate @pin, renderer: BootstrapPagination::Rails %>
  </div>
  

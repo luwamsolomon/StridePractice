@@ -18,7 +18,7 @@ class PinsController < ApplicationController
   end
 
   # GET /pins/1/edit
-  def edit
+  def edi
   end
 
   # POST /pins
