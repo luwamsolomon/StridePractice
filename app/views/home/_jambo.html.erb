@@ -1,11 +1,12 @@
 
 <div class='jumbotron'>
-
-<h1>Welcom to my Pinterested App</h1>
-        <p>This is the Best App Ever !</br> 
-        please stay tuned as my app developers.
+<div class ="center">
+<h1><strong>Welcome to my Pinterested App</strong></h1>
+        <p>This is the Best App Ever!</br> 
+        Please stay tuned as my app developers.
         It will be full of awesomesauce!
         </p>
+        <hr/ noshade style="height:0.5px">
         <% if signed_in? %>
          <%= link_to "Sign out", destroy_user_session_path, :method => :delete, class:'btn btn-info'  %>
          <%= link_to 'Edit Profile', edit_user_registration_path, class:'btn btn-danger' %>
@@ -13,4 +14,5 @@
          <%=link_to 'Log in', new_user_session_path, class:'btn btn-info' %>
          <%= link_to 'Join',new_user_registration_path, class:'btn btn-danger' %>
          <% end %>
+         </div>
 </div>
